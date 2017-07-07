@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;collider-multiple&gt;">
+    <CLASSES>
+      <root url="file://$USER_HOME$/go/src/github.com" />
+      <root url="file://$USER_HOME$/go/src/golang.org" />
+      <root url="file://$USER_HOME$/go/src/rtmp-server" />
+    </CLASSES>
+    <SOURCES>
+      <root url="file://$USER_HOME$/go/src/github.com" />
+      <root url="file://$USER_HOME$/go/src/golang.org" />
+      <root url="file://$USER_HOME$/go/src/rtmp-server" />
+    </SOURCES>
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>

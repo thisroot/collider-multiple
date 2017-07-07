@@ -75,20 +75,21 @@ func (rm *room) register(clientID string, rwc io.ReadWriteCloser) error {
 	return nil
 }
 
-// send sends the message to the other client of the room, or queues the message if the other client has not joined.
+// отправка отправляет сообщение другому клиенту комнаты, или помещает сообщение в очередь, если другой клиент не присоединился.
 func (rm *room) send(srcClientID string, msg string) error {
 	src, err := rm.client(srcClientID)
 	if err != nil {
 		return err
 	}
 
-	// Queue the message if the other client has not joined.
+	// Поместьить сообщение в очередь, если другой клиент не присоединился
 	if len(rm.clients) == 1 {
 		return rm.clients[srcClientID].enqueue(msg)
 	}
 
-	// Send the message to the other client of the room.
+	// Отпрввить сообщение другому клиенту в комнате.
 	for _, oc := range rm.clients {
+		log.Println(oc,msg)
 		if oc.id != srcClientID {
 			return src.send(oc, msg)
 		}
